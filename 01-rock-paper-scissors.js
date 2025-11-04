@@ -1,7 +1,9 @@
-console.log("==============================================");
-console.log("============= Rock Paper Scissors ============");
-console.log("==============================================");
-console.log("");
+//============================================
+//======== INPUT TO PLAY =====================
+//============================================
+// node 01-rock-paper-scissors.js rock
+// node 01-rock-paper-scissors.js paper
+// node 01-rock-paper-scissors.js scissors
 
 const a = "rock";
 const b = "paper";
@@ -16,19 +18,29 @@ const draw = "=>Result:        Draw!";
 //======= 1)PlayerChoice ===============
 //======================================
 let playerChoice = process.argv[2];
-// playerChoice = a;
-console.log(`You chose:       ${playerChoice}`);
+playerChoice = playerChoice.toLowerCase();
 
 //======================================
-//======= 2)EnemyChoice (random) =======
+//======= 2)EnemyChoice  ===============
 //======================================
 const randomNum = Math.random() * 3;
 const flooredNum = Math.floor(randomNum);
 const enemyChoice = enemyChoices[flooredNum];
+
+//======================================
+//======= 3)Result =====================
+//======================================
+// console.clear();
+process.stdout.write("\x1Bc\x1B[0f");
+console.log("==============================================");
+console.log("============= Rock Paper Scissors ============");
+console.log("==============================================");
+console.log("");
+console.log(`You chose:       ${playerChoice}`);
 console.log(`Computer chose:  ${enemyChoice}`);
 console.log("");
 
-// PLAYER CHOICE: ROCK
+// 1)CASE: ROCK
 if (playerChoice === "rock") {
   switch (enemyChoice) {
     case "rock":
@@ -45,7 +57,7 @@ if (playerChoice === "rock") {
   }
 }
 
-// PLAYER CHOICE: PAPER
+// 2)CASE: PAPER
 if (playerChoice === "paper") {
   switch (enemyChoice) {
     case "rock":
@@ -61,7 +73,7 @@ if (playerChoice === "paper") {
   }
 }
 
-// PLAYER CHOICE: SCISSORS
+// 3)CASE: SCISSORS
 if (playerChoice === "scissors") {
   switch (enemyChoice) {
     case "rock":
@@ -77,4 +89,5 @@ if (playerChoice === "scissors") {
       console.log(`=>No Results!`);
   }
 }
+
 console.log("\n");
