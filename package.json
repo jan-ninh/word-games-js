@@ -1,0 +1,23 @@
+{
+  "name": "11-solo-projekt",
+  "version": "1.0.0",
+  "description": "Solo project – Command line word games built with JavaScript (Node.js)",
+  "main": "caesar-cipher.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node rock-paper-scissors.js",
+    "watch": "node --watch rock-paper-scissors.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jan-ninh/word-games-js.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/jan-ninh/word-games-js/issues"
+  },
+  "homepage": "https://github.com/jan-ninh/word-games-js#readme"
+}
