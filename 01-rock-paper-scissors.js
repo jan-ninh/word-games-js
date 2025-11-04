@@ -90,4 +90,13 @@ if (playerChoice === "scissors") {
   }
 }
 
+// 4)INVALID INPUT
+if (
+  playerChoice !== "rock" &&
+  playerChoice !== "paper" &&
+  playerChoice !== "scissors"
+) {
+  console.log(`You cannot use ${playerChoice}! Stop cheating!!`);
+}
+
 console.log("\n");
