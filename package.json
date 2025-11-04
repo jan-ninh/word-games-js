@@ -5,8 +5,8 @@
   "main": "caesar-cipher.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node 01-rock-paper-scissors.js",
-    "watch": "node --watch 01-rock-paper-scissors.js"
+    "start": "node 02-pig-latin-translator",
+    "watch": "node --watch 02-pig-latin-translator.js"
   },
   "repository": {
     "type": "git",
