@@ -13,6 +13,10 @@
 //
 // Example: node caesarCipher.js "hello world" 3 # Output: khoor zruog
 //==========================================================================================================================
+// ASCII-Codes für Buchstaben
+// A-Z (65-90)
+// a-z (97-122)
+//==========================================================================================================================
 
 process.stdout.write("\x1Bc\x1B[0f");
 
@@ -24,6 +28,11 @@ const newWords = [];
 let currentWord = words[0];
 let currentChars = currentWord.split("");
 let newSentence = "";
+let isUpperCase = false;
+
+function isUppercase(char) {
+  return char === char.toUpperCase() && char !== char.toLowerCase();
+}
 
 //==========================================================================================================================
 //================ LOGIC ===================================================================================================
@@ -33,7 +42,41 @@ for (j = 0; j < words.length; j++) {
   currentChars = currentWord.split("");
 
   for (i = 0; i < currentChars.length; i++) {
+    isUpperCase = isUppercase(currentChars[i]);
+    // console.log(isUpperCase);
+
     currentChars[i] = currentChars[i].charCodeAt() + shift;
+    // console.log(`HIER: ${currentChars[i] - shift}`);
+
+    //alphabet-wrap (a-z)
+    if (isUpperCase === false) {
+      if (shift > 0) {
+        if (Number(currentChars[i]) > 122) {
+          currentChars[i] = Number(currentChars[i]) - 26;
+        }
+      }
+      if (shift < 0) {
+        if (Number(currentChars[i]) < 97) {
+          currentChars[i] = Number(currentChars[i]) + 26;
+        }
+      }
+    }
+
+    //alphabet-wrap (A-Z)
+    if (isUpperCase === true) {
+      if (shift > 0) {
+        if (Number(currentChars[i]) > 90) {
+          currentChars[i] = Number(currentChars[i]) - 26;
+        }
+      }
+      if (shift < 0) {
+        if (Number(currentChars[i]) < 65) {
+          currentChars[i] = Number(currentChars[i]) + 26;
+        }
+      }
+    }
+
+    // console.log(currentChars[i]);
     currentChars[i] = String.fromCharCode(currentChars[i]);
     currentWord = currentChars.join("");
   }
