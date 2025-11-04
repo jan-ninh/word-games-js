@@ -1,6 +1,6 @@
-//==================================================== HH
-//================ NOTES ============================= HA
-//==================================================== A
+//====================================================
+//================ NOTES =============================
+//====================================================
 // 1) Word starts with consonant + vowel (TRUE FALSE)
 // - Put first letter at the end
 // - Add “ay.”
@@ -104,7 +104,7 @@ for (let k = 0; k < words.length; k++) {
   consonants[1] = true;
 }
 
-let newSentence = newArray.join(" ");
+let newWords = newArray.join(" ");
 //====================================================
 //=========== 3)Result ===============================
 //====================================================
@@ -119,5 +119,5 @@ console.log("");
 // console.log(`Consonants? ${consonants}`);
 // console.log("");
 console.log(`Pig Latin:`);
-console.log(newSentence);
+console.log(newWords);
 console.log("\n");
