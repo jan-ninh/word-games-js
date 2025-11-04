@@ -1,6 +1,6 @@
-//============================================
-//======== INPUT TO PLAY =====================
-//============================================
+//====================================================
+//================ INPUT TO PLAY =====================
+//====================================================
 // node 01-rock-paper-scissors.js rock
 // node 01-rock-paper-scissors.js paper
 // node 01-rock-paper-scissors.js scissors
@@ -10,27 +10,26 @@ const b = "paper";
 const c = "scissors";
 const enemyChoices = [a, b, c];
 
-const win = "=>Result:        You win!🎉";
-const lose = "=>Result:        You lose!";
-const draw = "=>Result:        Draw!";
+const win = " =>Result:       You win!🎉";
+const lose = " =>Result:       You lose!";
+const draw = " =>Result:       Draw!";
 
-//======================================
-//======= 1)PlayerChoice ===============
-//======================================
+//====================================================
+//=========== 1)Player ===============================
+//====================================================
 let playerChoice = process.argv[2];
 playerChoice = playerChoice.toLowerCase();
 
-//======================================
-//======= 2)EnemyChoice  ===============
-//======================================
+//====================================================
+//=========== 2)Enemy ================================
+//====================================================
 const randomNum = Math.random() * 3;
 const flooredNum = Math.floor(randomNum);
 const enemyChoice = enemyChoices[flooredNum];
 
-//======================================
-//======= 3)Result =====================
-//======================================
-// console.clear();
+//====================================================
+//=========== 3)Result ===============================
+//====================================================
 process.stdout.write("\x1Bc\x1B[0f");
 console.log("==============================================");
 console.log("============= Rock Paper Scissors ============");
@@ -62,6 +61,7 @@ if (playerChoice === "paper") {
   switch (enemyChoice) {
     case "rock":
       console.log(win);
+      break;
     case "paper":
       console.log(draw);
       break;
